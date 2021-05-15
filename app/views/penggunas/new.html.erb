@@ -1,0 +1,30 @@
+<%= form_with(model: @pengguna, local: true) do |f| %>
+<%= render 'shared/error_messages', object: @pengguna %>
+<li>
+  <%= f.label :username %>
+  <br>
+  <%= f.text_field :username %>
+</li>
+  <br>
+<li>
+  <%= f.label :email %>
+  <br>
+  <%= f.email_field :email %>
+</li>
+<br>
+<li>
+  <%= f.label :password %>
+  <br>
+  <%= f.password_field :password %>
+</li>
+<br>
+<li>
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <br>
+  <%= f.password_field :password_confirmation %>
+</li>
+<br>
+<li>
+  <%= f.submit "Create my account" %>
+  </li>
+<% end %>
