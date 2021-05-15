@@ -1,5 +1,18 @@
 <h1>This Is <%= @user.username %> Profile Page</h1>
 
+<% if current_user != @user %>
+  <% if current_user.followings.include?(@user) %>
+    <%= form_for @find_relationship, html: {method: :delete} do |f| %>
+    <%= f.submit 'Unfollow' %>
+    <% end %>
+    <% else %>
+    <%= form_for Relationship.new do |f| %>
+    <%= hidden_field_tag :following_id, @user.id %>
+    <%= f.submit 'Follow' %>
+    <% end %>
+    <% end %>
+    <% end %>
+
 <%= form_with(model: Post.new, local: true) do |f| %>
 <%= f.label :Insert %>
 <br>
