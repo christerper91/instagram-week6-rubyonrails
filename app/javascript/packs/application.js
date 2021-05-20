@@ -12,4 +12,4 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import '../modules/formValidator'
+// import '../modules/formValidator'
