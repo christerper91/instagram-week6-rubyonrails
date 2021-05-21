@@ -2,6 +2,7 @@ class PenggunasController < ApplicationController
 
   def new
   @pengguna = Pengguna.new
+  redirect_to pengguna_path(@pengguna)
   end
 
   def create
