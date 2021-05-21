@@ -10,7 +10,7 @@ class PenggunasController < ApplicationController
       # Handle a successful save.
     redirect_to pengguna_path(@pengguna), notice: 'You have successfully signed up.'
     else
-      render 'new'
+     redirect_to pengguna_path(@pengguna)
     end
   end
 
